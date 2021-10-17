@@ -79,7 +79,7 @@ public class Layout : MonoBehaviour
                     drawPile = tSD;
                     break;
 
-                case "discardPile":
+                case "discardpile":
                     discardPile = tSD;
                     break;
             }
