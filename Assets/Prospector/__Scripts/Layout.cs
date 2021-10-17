@@ -51,8 +51,8 @@ public class Layout : MonoBehaviour
                 tSD.type = "slot";
             }
 
-            tSD.x = float.Parse(xml["multiplier"][0].att("x"));
-            tSD.y = float.Parse(xml["multiplier"][0].att("y"));
+            tSD.x = float.Parse(slotsX[i].att("x"));
+            tSD.y = float.Parse(slotsX[i].att("y"));
             tSD.layerID = int.Parse(slotsX[i].att("layer"));
 
             tSD.layerName = sortingLayerNames[tSD.layerID];

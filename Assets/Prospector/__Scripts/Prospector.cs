@@ -91,7 +91,11 @@ public class Prospector : MonoBehaviour {
 
 			UpdateDrawPile();
         }
-    }
+
+		MoveToTarget(Draw());
+
+		UpdateDrawPile();
+	}
 
 	void MoveToDiscard(CardProspector cd)
     {
