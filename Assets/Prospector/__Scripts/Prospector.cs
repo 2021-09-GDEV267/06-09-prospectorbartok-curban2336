@@ -32,6 +32,7 @@ public class Prospector : MonoBehaviour {
 	public List<CardProspector> tableau;
 	public List<CardProspector> discardPile;
 	public FloatingScore fsRun;
+	public int goldCounter = 0;
 
 	void Awake(){
 		S = this;
@@ -132,7 +133,14 @@ public class Prospector : MonoBehaviour {
 
 		foreach(CardProspector tCP in tableau)
         {
-			foreach(int hid in tCP.slotDef.hiddenBy)
+			if (Random.value <= 0.1f)
+			{
+				tCP.back.GetComponent<SpriteRenderer>().sprite = deck.cardBackGold;
+				tCP.GetComponent<SpriteRenderer>().sprite = deck.cardFrontGold;
+				tCP.isGold = true;
+			}
+
+			foreach (int hid in tCP.slotDef.hiddenBy)
             {
 				cp = FindCardByLayoutID(hid);
 				tCP.hiddenBy.Add(cp);
@@ -229,7 +237,7 @@ public class Prospector : MonoBehaviour {
 				MoveToDiscard(target);
 				MoveToTarget(Draw());
 				UpdateDrawPile();
-				ScoreManager.EVENT(eScoreEvent.draw);
+				ScoreManager.EVENT(eScoreEvent.draw, cd);
 				FloatingScoreHandler(eScoreEvent.draw);
 				break;
 			case eCardState.tableau:
@@ -244,10 +252,15 @@ public class Prospector : MonoBehaviour {
                 }
 				if (!validMatch) return;
 
+				if (cd.isGold == true)
+                {
+					goldCounter++;
+                }
+
 				tableau.Remove(cd);
 				MoveToTarget(cd);
 				SetTableauFaces();
-				ScoreManager.EVENT(eScoreEvent.mine);
+				ScoreManager.EVENT(eScoreEvent.mine, cd);
 				FloatingScoreHandler(eScoreEvent.mine);
 				break;
         }
@@ -286,11 +299,11 @@ public class Prospector : MonoBehaviour {
 		if (won == true)
         {
 			gameOverText.text = "Round Over";
-			roundResultText.text = "You won this round!\nRoundScore" + score;
+			roundResultText.text = "You won this round!\nRoundScore: " + score;
 			ShowResultsUI(true);
 
 			//print("Game Over. You won");
-			ScoreManager.EVENT(eScoreEvent.gameWin);
+			ScoreManager.EVENT(eScoreEvent.gameWin, null);
 			FloatingScoreHandler(eScoreEvent.gameWin);
 		}
         else
@@ -307,7 +320,7 @@ public class Prospector : MonoBehaviour {
 			}
 			ShowResultsUI(true);
 			//print("you lose");
-			ScoreManager.EVENT(eScoreEvent.gameLoss);
+			ScoreManager.EVENT(eScoreEvent.gameLoss, null);
 			FloatingScoreHandler(eScoreEvent.gameLoss);
 		}
 
@@ -347,17 +360,20 @@ public class Prospector : MonoBehaviour {
 					fsPts.Add(fsPosRun);
 					fsPts.Add(fsPosMid2);
 					fsPts.Add(fsPosEnd);
+					int modifiedTotal = fsRun.score * (int)Mathf.Pow(2, goldCounter);
+					fsRun.score = modifiedTotal;
 					fsRun.reportFinishTo = ScoreBoard.S.gameObject;
 					fsRun.Init(fsPts, 0, 1);
 					fsRun.fontSizes = new List<float>(new float[] { 28, 36, 4 });
 					fsRun = null;
+					goldCounter = 0;
 				}
 				break;
 			case eScoreEvent.mine:
 				FloatingScore fs;
 				Vector2 p0 = Input.mousePosition;
 				p0.x /= Screen.width;
-				p0.x /= Screen.height;
+				p0.y /= Screen.height;
 				fsPts = new List<Vector2>();
 				fsPts.Add(p0);
 				fsPts.Add(fsPosMid);

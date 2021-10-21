@@ -17,6 +17,7 @@ public class CardProspector : Card
 
     public int layoutID;
     public SlotDef slotDef;
+    public bool isGold = false;
     
     // Start is called before the first frame update
     void Start()

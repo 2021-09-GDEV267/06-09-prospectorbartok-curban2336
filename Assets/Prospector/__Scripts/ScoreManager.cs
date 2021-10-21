@@ -43,11 +43,11 @@ public class ScoreManager : MonoBehaviour
         SCORE_FROM_PREV_ROUND = 0;
     }
 
-    static public void EVENT(eScoreEvent evt)
+    static public void EVENT(eScoreEvent evt, CardProspector cd)
     {
         try
         {
-            S.Event(evt);
+            S.Event(evt, cd);
         }
         catch (System.NullReferenceException nre)
         {
@@ -55,7 +55,7 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    void Event(eScoreEvent evt)
+    void Event(eScoreEvent evt, CardProspector cd)
     {
         switch (evt)
         {
@@ -101,6 +101,10 @@ public class ScoreManager : MonoBehaviour
         get
         {
             return S.chain;
+        }
+        set
+        {
+            S.chain = value;
         }
     }
     static public int SCORE

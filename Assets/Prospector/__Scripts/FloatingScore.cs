@@ -85,7 +85,7 @@ public class FloatingScore : MonoBehaviour
         }
         else
         {
-            if (u > 1)
+            if (u >= 1)
             {
                 uC = 1;
                 state = eFSState.post;
