@@ -27,7 +27,14 @@ public class CardProspector : Card
 
     override public void OnMouseUpAsButton()
     {
-        Prospector.S.CardClicked(this);
+        if(Prospector.S != null)
+        {
+            Prospector.S.CardClicked(this);
+        }
+        if(Elevens.S != null)
+        {
+            Elevens.S.CardClicked(this);
+        }
         base.OnMouseUpAsButton();
     }
 

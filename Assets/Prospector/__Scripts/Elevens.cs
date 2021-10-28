@@ -27,8 +27,12 @@ public class Elevens : MonoBehaviour {
 	public Deck					deck;
 	public Layout				layout;
 	public List<CardProspector> drawPile;
+	public List<CardProspector> stacker;
 	public Transform layoutAnchor;
 	public CardProspector target;
+	public Vector3 table = new Vector3(0, 0, 0);
+	public bool addUp = false;
+	public List<Vector3> eleven;
 	public List<CardProspector> tableau;
 	public List<CardProspector> discardPile;
 	public FloatingScore fsRun;
@@ -147,7 +151,7 @@ public class Elevens : MonoBehaviour {
             }
         }
 
-		MoveToTarget(Draw());
+		//MoveToTarget(Draw());
 
 		UpdateDrawPile();
 	}
@@ -208,6 +212,17 @@ public class Elevens : MonoBehaviour {
 		cd.SetSortOrder(0);
 	}
 
+	void MoveToTableau(CardProspector c0, Vector3 c1)
+    {
+		c0.transform.position = c1;
+		c0.state = eCardState.tableau;
+		tableau.Add(c0);
+		UpdateDrawPile();
+		ScoreManager.EVENT(eScoreEvent.draw, c0);
+		FloatingScoreHandler(eScoreEvent.draw);
+
+	}
+
 	void UpdateDrawPile()
     {
 		CardProspector cd;
@@ -229,26 +244,57 @@ public class Elevens : MonoBehaviour {
 
 	public void CardClicked(CardProspector cd)
     {
-        switch (cd.state)
+		Vector3 newPos;
+		GameObject[] cards = GameObject.FindGameObjectsWithTag("Card");
+		switch (cd.state)
         {
 			case eCardState.target:
 				break;
-			case eCardState.drawpile:
-				MoveToDiscard(target);
-				MoveToTarget(Draw());
-				UpdateDrawPile();
-				ScoreManager.EVENT(eScoreEvent.draw, cd);
-				FloatingScoreHandler(eScoreEvent.draw);
-				break;
+			//case eCardState.drawpile:
+				//MoveToDiscard(target);
+				//MoveToTarget(Draw());
+				//UpdateDrawPile();
+				//ScoreManager.EVENT(eScoreEvent.draw, cd);
+				//FloatingScoreHandler(eScoreEvent.draw);
+				//break;
 			case eCardState.tableau:
 				bool validMatch = true;
                 if (!cd.faceUp)
                 {
 					validMatch = false;
                 }
-                if (!AdjacentRank(cd,target))
+				if(addUp != true)
+                {
+					addUp = true;
+					target = cd;
+					newPos = cd.transform.position;
+					//cd.Find("HaloAnchor").SetActive(true);
+					cd.transform.position = newPos;
+					if (cd.rank == 11)
+                    {
+						tableau.Remove(cd);
+						MoveToTableau(Draw(), cd.transform.position);
+						MoveToTarget(cd);
+						SetTableauFaces();
+						ScoreManager.EVENT(eScoreEvent.mine, cd);
+						FloatingScoreHandler(eScoreEvent.mine);
+						//cd.Find("HaloAnchor").SetActive(false);
+						addUp = false;
+						target = null;
+						table = new Vector3(0, 0, 0);
+						eleven.Clear();
+						stacker.Clear();
+						return;
+                    }
+					table = cd.transform.position;
+					eleven.Add(table);
+					stacker.Add(cd);
+					return;
+                }
+                else if (!AddToEleven(cd,target))
                 {
 					validMatch = false;
+					addUp = false;
                 }
 				if (!validMatch) return;
 
@@ -257,15 +303,35 @@ public class Elevens : MonoBehaviour {
 					goldCounter++;
                 }
 
-				tableau.Remove(cd);
-				MoveToTarget(cd);
+				table = cd.transform.position;
+				eleven.Add(table);
+				stacker.Add(cd);
+				foreach (CardProspector card in stacker)
+                {
+					tableau.Remove(card);
+					MoveToTarget(card);
+                }
+				foreach(Vector3 card in eleven)
+                {
+					MoveToTableau(Draw(), card);
+                }
+				//for (int i = 0; i < cards.Length; i++)
+                //{
+					//cards[i].parent.Find("HaloAnchor").SetActive(false);
+				//}
 				SetTableauFaces();
 				ScoreManager.EVENT(eScoreEvent.mine, cd);
 				FloatingScoreHandler(eScoreEvent.mine);
+				target = null;
+				table = new Vector3(0, 0, 0);
+				eleven.Clear();
+				stacker.Clear();
+				addUp = false;
 				break;
         }
-
 		CheckForGameOver();
+		
+
     }
 
 	void CheckForGameOver()
@@ -279,14 +345,6 @@ public class Elevens : MonoBehaviour {
         if (drawPile.Count > 0)
         {
 			return;
-        }
-
-		foreach(CardProspector cd in tableau)
-        {
-			if(AdjacentRank(cd, target))
-            {
-				return;
-            }
         }
 
 		GameOver(false);
@@ -332,16 +390,23 @@ public class Elevens : MonoBehaviour {
 		SceneManager.LoadScene("__Prospector_Scene_0");
 	}
 
-	public bool AdjacentRank(CardProspector c0, CardProspector c1)
+	public bool AddToEleven(CardProspector c0, CardProspector c1)
     {
 		if (!c0.faceUp || !c1.faceUp) return (false);
 
-		if(Mathf.Abs(c0.rank - c1.rank) == 1)
+		if(Mathf.Abs(c0.rank + c1.rank) == 11)
         {
 			return (true);
         }
-		if (c0.rank == 1 && c1.rank == 13) return (true);
-		if (c0.rank == 13 && c1.rank == 1) return (true);
+		if (Mathf.Abs(c0.rank - c1.rank) == 11)
+		{
+			return (true);
+		}
+		if (Mathf.Abs(c1.rank - c0.rank) == 11)
+		{
+			return (true);
+		}
+		if (c0.rank == 11) return (true);
 
 		return (false);
 	}
