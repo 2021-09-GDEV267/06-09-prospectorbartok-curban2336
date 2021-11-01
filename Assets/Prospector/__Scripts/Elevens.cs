@@ -194,7 +194,7 @@ public class Elevens : MonoBehaviour {
 		cd.faceUp = true;
 
 		cd.SetSortingLayerName(layout.discardPile.layerName);
-		cd.SetSortOrder(-100 + discardPile.Count);
+		cd.SetSortOrder(-200 + (discardPile.Count*5));
     }
 
 	void MoveToTarget(CardProspector cd)
