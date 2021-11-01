@@ -15,11 +15,11 @@ D:/Github/Real github/06-09-prospectorbartok-curban2336
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-57169
+59244
 Successfully changed project path to: D:/Github/Real github/06-09-prospectorbartok-curban2336
 D:/Github/Real github/06-09-prospectorbartok-curban2336
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 23.90 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 23.31 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.13f1 (71691879b7f5)
 [Subsystems] Discovering subsystems at path C:/Program Files/2020.3.13f1/Editor/Data/Resources/UnitySubsystems
@@ -35,40 +35,40 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/2020.3.13f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/2020.3.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/2020.3.13f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56740
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56016
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/2020.3.13f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/2020.3.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002157 seconds.
+Registered in 0.002215 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 22.92 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 21.54 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.962 seconds
+- Completed reload, in  0.990 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002156 seconds.
+Registered in 0.002173 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.27 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.26 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.810 seconds
+- Completed reload, in  0.777 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.33 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.25 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1401 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 65.1 MB.
 System memory in use after: 65.1 MB.
 
 Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 1837.
-Total: 1.509300 ms (FindLiveObjects: 0.136300 ms CreateObjectMapping: 0.043500 ms MarkObjects: 1.280800 ms  DeleteObjects: 0.048100 ms)
+Total: 1.482700 ms (FindLiveObjects: 0.119400 ms CreateObjectMapping: 0.038700 ms MarkObjects: 1.244100 ms  DeleteObjects: 0.079800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -82,31 +82,63 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/Prospector/__Scripts/Elevens.cs
-  artifactKey: Guid(b6cd0ff2995f5264fb10e8fbf71c309b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prospector/__Scripts/Elevens.cs using Guid(b6cd0ff2995f5264fb10e8fbf71c309b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1618a7f585a0251209c7303a6eb3cdfd') in 0.018425 seconds 
-  Import took 0.020274 seconds .
+  path: Assets/OtherGame
+  artifactKey: Guid(611fad1c58d1745cd90ab04ce42540ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/OtherGame using Guid(611fad1c58d1745cd90ab04ce42540ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4dabe0ab0d79edc3bc1889314f75fdc') in 0.003522 seconds 
+  Import took 0.005163 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.633473 seconds.
+  path: Assets/Prospector/__Prospector_Scene_0 1.unity
+  artifactKey: Guid(3165e204095e50a488c9421c01112703) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prospector/__Prospector_Scene_0 1.unity using Guid(3165e204095e50a488c9421c01112703) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '281fa6be6fb0353d88c8caf9859888e3') in 0.008922 seconds 
+  Import took 0.010918 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 36.305157 seconds.
+  path: Assets/Prospector/__Bartok_Scene_0.unity
+  artifactKey: Guid(3165e204095e50a488c9421c01112703) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prospector/__Bartok_Scene_0.unity using Guid(3165e204095e50a488c9421c01112703) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '341893a72e744ee3bc5ff255054728e3') in 0.002169 seconds 
+  Import took 0.004128 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 124.290052 seconds.
+  path: Assets/Prospector/_Prefabs/BartokBackground_Mat.mat
+  artifactKey: Guid(8f596d388be6fdd48a45c51b0072aa75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prospector/_Prefabs/BartokBackground_Mat.mat using Guid(8f596d388be6fdd48a45c51b0072aa75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '556b7a0e4454bb91cdbd67b06fb09732') in 0.188169 seconds 
+  Import took 0.190642 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1749.032540 seconds.
+  path: Assets/Prospector/__Scripts/Bartok.cs
+  artifactKey: Guid(d06953dad2c81554480fae6b18a13950) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prospector/__Scripts/Bartok.cs using Guid(d06953dad2c81554480fae6b18a13950) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3df0783214932b3ce7a8eb890f3703ba') in 0.009227 seconds 
+  Import took 0.012353 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002286 seconds.
+Registered in 0.002103 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.45 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.33 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.814 seconds
+- Completed reload, in  0.734 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.26 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.25 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1395 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 64.9 MB.
-System memory in use after: 65.0 MB.
+Unloading 1396 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 68.3 MB.
+System memory in use after: 68.4 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1840.
-Total: 1.455000 ms (FindLiveObjects: 0.129900 ms CreateObjectMapping: 0.038500 ms MarkObjects: 1.271800 ms  DeleteObjects: 0.014100 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1881.
+Total: 1.498300 ms (FindLiveObjects: 0.129500 ms CreateObjectMapping: 0.040000 ms MarkObjects: 1.290000 ms  DeleteObjects: 0.038000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -120,32 +152,40 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 274.737052 seconds.
-  path: Assets/Prospector/__Scripts/Elevens.cs
-  artifactKey: Guid(b6cd0ff2995f5264fb10e8fbf71c309b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prospector/__Scripts/Elevens.cs using Guid(b6cd0ff2995f5264fb10e8fbf71c309b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '161aaa69d209c8e34c59ddeb4d676186') in 0.002897 seconds 
-  Import took 0.004510 seconds .
+  Time since last request: 11.567063 seconds.
+  path: Assets/Prospector/__Scripts/CardBartok.cs
+  artifactKey: Guid(2ee9447d2584cb34a96426bbbec57a5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prospector/__Scripts/CardBartok.cs using Guid(2ee9447d2584cb34a96426bbbec57a5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '367ff6c4e413d2ea9a7f5030ae3e7799') in 0.002910 seconds 
+  Import took 0.004910 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000558 seconds.
+  path: Assets/Prospector/__Scripts/CardBartok.cs
+  artifactKey: Guid(2ee9447d2584cb34a96426bbbec57a5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prospector/__Scripts/CardBartok.cs using Guid(2ee9447d2584cb34a96426bbbec57a5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '367ff6c4e413d2ea9a7f5030ae3e7799') in 0.001344 seconds 
+  Import took 0.003194 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002440 seconds.
+Registered in 0.002013 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.29 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.25 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.874 seconds
+- Completed reload, in  0.738 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.32 ms, found 2 plugins.
+Refreshing native plugins compatible for Editor in 0.25 ms, found 2 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1395 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 64.9 MB.
-System memory in use after: 65.0 MB.
+Unloading 1397 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 68.3 MB.
+System memory in use after: 68.4 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1843.
-Total: 1.991900 ms (FindLiveObjects: 0.180000 ms CreateObjectMapping: 0.071300 ms MarkObjects: 1.724600 ms  DeleteObjects: 0.014700 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 1885.
+Total: 1.434700 ms (FindLiveObjects: 0.125600 ms CreateObjectMapping: 0.036800 ms MarkObjects: 1.239900 ms  DeleteObjects: 0.031800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -157,4 +197,20 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 260.754849 seconds.
+  path: Assets/Prospector/__Scripts/CardProspector.cs
+  artifactKey: Guid(f3eeef9486986c343905cee4be227468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prospector/__Scripts/CardProspector.cs using Guid(f3eeef9486986c343905cee4be227468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a90aabb7b64a43d62a75b7e65f7250cb') in 0.004115 seconds 
+  Import took 0.006335 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.019353 seconds.
+  path: Assets/Prospector/__Scripts/CardProspector.cs
+  artifactKey: Guid(f3eeef9486986c343905cee4be227468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prospector/__Scripts/CardProspector.cs using Guid(f3eeef9486986c343905cee4be227468) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a90aabb7b64a43d62a75b7e65f7250cb') in 0.001893 seconds 
+  Import took 0.003851 seconds .
+
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

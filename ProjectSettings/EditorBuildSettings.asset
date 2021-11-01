@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Prospector/__Prospector_Scene_0.unity
     guid: e7876eae655084f8d9b344b33478f0fa
+  - enabled: 1
+    path: Assets/Prospector/__Bartok_Scene_0.unity
+    guid: 3165e204095e50a488c9421c01112703
   m_configObjects: {}
