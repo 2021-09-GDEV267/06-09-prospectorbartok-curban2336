@@ -9,13 +9,16 @@ public class Bartok : MonoBehaviour
 
     [Header("Set in Inspector")]
     public TextAsset deckXML;
-    public TextAsset LayoutXML;
+    public TextAsset layoutXML;
     public Vector3 layoutCenter = Vector3.zero;
 
     [Header("Set Dynamically")]
     public Deck deck;
     public List<CardBartok> drawpile;
     public List<CardBartok> discardpile;
+
+    private BartokLayout layout;
+    private Transform layoutAnchor;
 
     void Awake()
     {
@@ -28,11 +31,20 @@ public class Bartok : MonoBehaviour
         deck = GetComponent<Deck>();
         deck.InitDeck(deckXML.text);
         Deck.Shuffle(ref deck.cards);
+
+        layout = GetComponent<BartokLayout>();
+        layout.ReadLayout(layoutXML.text);
+
+        drawpile = UpgradeCardsList(deck.cards);
     }
 
-    // Update is called once per frame
-    void Update()
+    List<CardBartok> UpgradeCardsList(List<Card> lCD)
     {
-        
+        List<CardBartok> lCB = new List<CardBartok>();
+        foreach(Card tCD in lCD)
+        {
+            lCB.Add(tCD as CardBartok);
+        }
+        return (lCB);
     }
 }
