@@ -32,6 +32,9 @@ public class CardBartok : Card
 
     public GameObject reportFinishTo = null;
 
+    [System.NonSerialized]
+    public Player callbackPlayer = null;
+
     public void MoveTo(Vector3 ePos, Quaternion eRot)
     {
         bezierPts = new List<Vector3>();
@@ -94,6 +97,11 @@ public class CardBartok : Card
                         reportFinishTo.SendMessage("CBCallback", this);
                         reportFinishTo = null;
                     }
+                    else if(callbackPlayer != null)
+                    {
+                        callbackPlayer.CBCallback(this);
+                        callbackPlayer = null;
+                    }
                     else
                     {
 
@@ -121,5 +129,11 @@ public class CardBartok : Card
                 }
                 break;
         }
+    }
+
+    override public void OnMouseUpAsButton()
+    {
+        Bartok.S.CardClicked(this);
+        base.OnMouseUpAsButton();
     }
 }
