@@ -316,9 +316,5 @@ public class Deck : MonoBehaviour {
 
 	 	//because oCards is a ref parameter, the changes made are propogated back
 	 	//for ref paramters changes made in the function persist.
-
-
 	 }
-
-
 } // Deck class
