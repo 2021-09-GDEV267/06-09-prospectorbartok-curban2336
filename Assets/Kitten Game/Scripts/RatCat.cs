@@ -21,7 +21,6 @@ public class RatCat : MonoBehaviour
     public TextAsset deckXML;
     public TextAsset layoutXML;
     public Vector3 layoutCenter = Vector3.zero;
-    public float handFanDegrees = 10f;
     public int numStartingCards = 7;
     public float drawTimeStagger = 0.1f;
 
@@ -48,7 +47,6 @@ public class RatCat : MonoBehaviour
         deck.InitDeck(deckXML.text);
         Deck.Shuffle(ref deck.cards);
         deck.cards = deck.cards as List<Card>;
-        Debug.Log(deck.cards[0]);
 
         layout = GetComponent<CatLayout>();
         layout.ReadLayout(layoutXML.text);
@@ -289,7 +287,6 @@ public class RatCat : MonoBehaviour
         {
             lCC.Add(tCD as CardCat);
         }
-        Debug.Log(lCC[0]);
         return (lCC);
     }
 }

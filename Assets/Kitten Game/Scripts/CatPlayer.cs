@@ -57,22 +57,32 @@ public class CatPlayer
         startRot = handSlotDef.rot;
         if (hand.Count > 1)
         {
-            startRot += RatCat.S.handFanDegrees * (hand.Count - 1) / 2;
+            //startRot += (hand.Count - 1) / 2;
         }
 
         Vector3 pos;
+        Vector3 stagger = new Vector3(0,0,0);
         float rot;
         Quaternion rotQ;
         for (int i = 0; i < hand.Count; i++)
         {
-            rot = startRot - RatCat.S.handFanDegrees * i;
+            rot = startRot;
             rotQ = Quaternion.Euler(0, 0, rot);
 
             pos = Vector3.up * CardCat.CARD_HEIGHT / 2f;
 
             pos = rotQ * pos;
 
-            pos += handSlotDef.pos;
+            stagger.x = handSlotDef.stagger.x;
+            stagger.y = handSlotDef.stagger.y;
+            if(Mathf.Sign(handSlotDef.rot) == 1)
+            {
+                pos += handSlotDef.pos + stagger;
+            }
+            else
+            {
+                pos += handSlotDef.pos - stagger;
+            }
             pos.z = -0.5f * i;
 
             if (RatCat.S.phase != TurnPhaseCat.idle)
@@ -82,12 +92,6 @@ public class CatPlayer
 
             hand[i].MoveTo(pos, rotQ);
             hand[i].state = CCState.toHand;
-
-            /*
-            hand[i].transform.localPosition = pos;
-            hand[i].transform.rotation = rotQ;
-            hand[i].state = CBState.hand;
-            */
 
             hand[i].faceUp = (type == PlayerTypeCat.human);
 

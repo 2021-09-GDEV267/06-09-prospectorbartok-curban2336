@@ -94,7 +94,7 @@ public class CardCat : Card
 
                     if (reportFinishTo != null)
                     {
-                        reportFinishTo.SendMessage("CBCallback", this);
+                        reportFinishTo.SendMessage("CCCallback", this);
                         reportFinishTo = null;
                     }
                     else if (callbackPlayer != null)
