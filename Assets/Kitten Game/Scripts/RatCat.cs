@@ -105,9 +105,8 @@ public class RatCat : MonoBehaviour
 
                 players[(j + 1) % 4].AddCard(tCC);
             }
-
-            Invoke("DrawFirstTarget", drawTimeStagger * (numStartingCards * 4 + 4));
         }
+        Invoke("DrawFirstTarget", drawTimeStagger * (numStartingCards * 4 + 4));
     }
 
     public void DrawFirstTarget()
@@ -199,6 +198,7 @@ public class RatCat : MonoBehaviour
 
         tCC.SetSortingLayerName("10");
         tCC.eventualSortLayer = layout.target.layerName;
+        Debug.Log(targetCard);
         if (targetCard != null)
         {
             MoveToDiscard(targetCard);

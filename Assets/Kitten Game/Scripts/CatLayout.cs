@@ -84,8 +84,8 @@ public class CatLayout : MonoBehaviour
                     tSD.player = int.Parse(slotsX[i].att("player"));
                     tSD.rot = float.Parse(slotsX[i].att("rot"));
 
-                    tSD.stagger.x = float.Parse(slotsX[i].att("xstagger")) * i;
-                    tSD.stagger.y = float.Parse(slotsX[i].att("ystagger")) * i;
+                    tSD.stagger.x = float.Parse(slotsX[i].att("xstagger"));
+                    tSD.stagger.y = float.Parse(slotsX[i].att("ystagger"));
                     slotDefs.Add(tSD);
                     break;
             }

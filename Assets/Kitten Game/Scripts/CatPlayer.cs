@@ -55,10 +55,6 @@ public class CatPlayer
     {
         float startRot = 0;
         startRot = handSlotDef.rot;
-        if (hand.Count > 1)
-        {
-            //startRot += (hand.Count - 1) / 2;
-        }
 
         Vector3 pos;
         Vector3 stagger = new Vector3(0,0,0);
@@ -75,13 +71,15 @@ public class CatPlayer
 
             stagger.x = handSlotDef.stagger.x;
             stagger.y = handSlotDef.stagger.y;
-            if(Mathf.Sign(handSlotDef.rot) == 1)
+            if(handSlotDef.rot == 0 || handSlotDef.rot == 180)
             {
-                pos += handSlotDef.pos + stagger;
+                pos += handSlotDef.pos;
+                pos.x += stagger.x * i;
             }
             else
             {
-                pos += handSlotDef.pos - stagger;
+                pos += handSlotDef.pos;
+                pos.y -= stagger.y * i;
             }
             pos.z = -0.5f * i;
 

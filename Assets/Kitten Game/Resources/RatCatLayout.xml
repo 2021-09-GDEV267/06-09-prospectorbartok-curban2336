@@ -21,10 +21,10 @@
 	<slot type="target" x="-1.5" y="0" layer="4"/>
 	
 	<!-- Hands held by the four players -->
-	<slot type="hand" x="0" y="-8" rot="0" xstagger="0.5" ystagger="0.5" player="1" layer="3" />
-	<slot type="hand" x="-10" y="0" rot="270" xstagger="0.5" ystagger="0.5" player="2" layer="3" />
-	<slot type="hand" x="0" y="8" rot="180" xstagger="0.5" ystagger="0.5" player="3" layer="3" />
-	<slot type="hand" x="10" y="0" rot="90" xstagger="0.5" ystagger="0.5" player="4" layer="3" />
+	<slot type="hand" x="-2" y="-8" rot="0" xstagger="1.5" ystagger="1.5" player="1" layer="3" />
+	<slot type="hand" x="-10" y="2" rot="270" xstagger="1.5" ystagger="1.5" player="2" layer="3" />
+	<slot type="hand" x="-2" y="8" rot="180" xstagger="1.5" ystagger="1.5" player="3" layer="3" />
+	<slot type="hand" x="10" y="2" rot="90" xstagger="1.5" ystagger="1.5" player="4" layer="3" />
 	
 </xml>
 	
