@@ -477,6 +477,7 @@ GameObject:
   - component: {fileID: 1475933681}
   - component: {fileID: 1475933680}
   - component: {fileID: 1475933683}
+  - component: {fileID: 1475933684}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -562,10 +563,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorRange: []
+  slots: []
   target1: {fileID: 937621763}
   target2: {fileID: 649729527}
   target3: {fileID: 1930749236}
   target4: {fileID: 1562307933}
+  xmlr:
+    xmlText: 
+  multiplier: {x: 0, y: 0}
+--- !u!114 &1475933684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475933679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad17b2b57f456e4b8e762f60f9edcbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deckXML: {fileID: 4900000, guid: c76312a0fb08948699e1abf935e4a957, type: 3}
+  layoutXML: {fileID: 4900000, guid: bace092e788b55940a79af91c5d4f706, type: 3}
+  layoutCenter: {x: 0, y: 0, z: 0}
+  targetCard: {fileID: 0}
+  phase: 0
+  colorSquares: []
 --- !u!1001 &1495600113
 PrefabInstance:
   m_ObjectHideFlags: 0

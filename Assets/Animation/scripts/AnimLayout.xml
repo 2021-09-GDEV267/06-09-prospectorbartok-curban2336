@@ -1,0 +1,21 @@
+<xml>
+	<!-- This file holds info for laying out the Prospector card game. -->
+	
+	<!-- The multiplier is multiplied by the x and y attributes below. -->
+	<!-- This determines how loose or tight the layout is. --> 
+	<multiplier x="1" y="1" />
+	
+	<!-- In the XML below, id is the number of the card -->
+	<!-- x and y set position -->
+	<!-- faceup is 1 if the card is face-up -->
+	<!-- layer sets the depth layer so cards overlap properly -->
+	<!-- hiddenby is the ids of cards that keep a card face-down -->
+	
+	<!-- Hands held by the four players -->
+	<slot type="point" x="0" y="8" rot="0" player="1" layer="3" />
+	<slot type="point" x="-8" y="0" rot="270" player="2" layer="3" />
+	<slot type="point" x="0" y="-8" rot="180" player="3" layer="3" />
+	<slot type="point" x="8" y="0" rot="90" player="4" layer="3" />
+	
+</xml>
+	
