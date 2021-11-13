@@ -83,9 +83,15 @@ public class CardBartok : Card
                 {
                     uC = 1;
                     if (state == CBState.toHand) state = CBState.hand;
-                    if (state == CBState.toTarget) state = CBState.target;
+                    if (state == CBState.toTarget)
+                    {
+                        state = CBState.target;
+                    }
                     if (state == CBState.toDrawpile) state = CBState.drawpile;
-                    if (state == CBState.to) state = CBState.idle;
+                    if (state == CBState.to)
+                    {
+                        state = CBState.idle;
+                    }
 
                     transform.localPosition = bezierPts[bezierPts.Count-1];
                     transform.rotation = bezierRots[bezierPts.Count-1];

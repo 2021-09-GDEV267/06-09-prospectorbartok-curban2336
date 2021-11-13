@@ -68,32 +68,42 @@ public class LayoutAnim : MonoBehaviour
         sprite.color = new Color(255, 255, 0, 255);
     }
 
-    public void SetColor(GameObject obj, string str)
+    public Color SetColor(GameObject obj, string str)
     {
         if (str == "red")
         {
             sprite = obj.GetComponent<SpriteRenderer>();
 
             sprite.color = new Color(255, 0, 0, 255);
+
+            return sprite.color;
         }
         else if (str == "green")
         {
             sprite = obj.GetComponent<SpriteRenderer>();
 
             sprite.color = new Color(0, 255, 0, 255);
+
+            return sprite.color;
         }
         else if (str == "blue")
         {
             sprite = obj.GetComponent<SpriteRenderer>();
 
             sprite.color = new Color(0, 0, 255, 255);
+
+            return sprite.color;
         }
         else if (str == "yellow")
         {
             sprite = obj.GetComponent<SpriteRenderer>();
 
             sprite.color = new Color(255, 255, 0, 255);
+
+            return sprite.color;
         }
+
+        return new Color(255, 0, 0, 255);
     }
 
     // Update is called once per frame
