@@ -91,8 +91,6 @@ public class CatPlayer
             hand[i].MoveTo(pos, rotQ);
             hand[i].state = CCState.toHand;
 
-            hand[i].faceUp = (type == PlayerTypeCat.human);
-
             hand[i].eventualSortOrder = i * 4;
 
         }
