@@ -277,6 +277,16 @@ public class RatCat : MonoBehaviour
                     Utils.tr("Rat-a-tat-cat:CardClicked()", "Attempted to Play", tCC.name, targetCard.name + " is target");
                 }
                 break;
+            case CCState.target:
+                CardCat cC = CURRENT_PLAYER.AddCard(tCC);
+                cC.timeStart = 0;
+                cC.callbackPlayer = CURRENT_PLAYER;
+                Utils.tr("Rat-a-tat-cat:CardClicked()", "Take", cC.name);
+                MoveToTarget(discardpile[0]);
+                cC.state = CCState.toHand;
+                cC.faceUp = false;
+                phase = TurnPhaseCat.waiting;
+                break;
         }
     }
 
