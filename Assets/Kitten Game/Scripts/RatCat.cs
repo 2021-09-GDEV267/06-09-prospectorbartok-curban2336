@@ -282,7 +282,7 @@ public class RatCat : MonoBehaviour
                 cC.timeStart = 0;
                 cC.callbackPlayer = CURRENT_PLAYER;
                 Utils.tr("Rat-a-tat-cat:CardClicked()", "Take", cC.name);
-                MoveToTarget(discardpile[0]);
+                MoveToTarget(discardpile[discardpile.Count-1]);
                 cC.state = CCState.toHand;
                 cC.faceUp = false;
                 phase = TurnPhaseCat.waiting;
